@@ -7,13 +7,30 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B72748A029750B3F00B7E0D8 /* ToyShader.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B727489E29750B3F00B7E0D8 /* ToyShader.xcdatamodeld */; };
+		B72748A229751C5900B7E0D8 /* DefaultShader2 in Resources */ = {isa = PBXBuildFile; fileRef = B72748A129751C5900B7E0D8 /* DefaultShader2 */; };
+		B73119F329733569004FC5F7 /* StartupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B73119F229733569004FC5F7 /* StartupView.swift */; };
+		B73119F5297357C4004FC5F7 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B73119F4297357C4004FC5F7 /* Colors.xcassets */; };
+		B73119F92973B40C004FC5F7 /* EditShaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B73119F82973B40C004FC5F7 /* EditShaderView.swift */; };
+		B7311A342974B468004FC5F7 /* LazyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7311A332974B468004FC5F7 /* LazyView.swift */; };
 		B74CEAFC2967A2DE0072275B /* metaltoyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74CEAFB2967A2DE0072275B /* metaltoyApp.swift */; };
-		B74CEAFE2967A2DE0072275B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74CEAFD2967A2DE0072275B /* ContentView.swift */; };
 		B74CEB002967A2DF0072275B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B74CEAFF2967A2DF0072275B /* Assets.xcassets */; };
 		B74CEB042967A2DF0072275B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B74CEB032967A2DF0072275B /* Preview Assets.xcassets */; };
 		B74CEB0E2967A2DF0072275B /* metaltoyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74CEB0D2967A2DF0072275B /* metaltoyTests.swift */; };
 		B74CEB182967A2DF0072275B /* metaltoyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74CEB172967A2DF0072275B /* metaltoyUITests.swift */; };
 		B74CEB1A2967A2DF0072275B /* metaltoyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74CEB192967A2DF0072275B /* metaltoyUITestsLaunchTests.swift */; };
+		B7723376296E5AD70046ACD1 /* CodeEditor in Frameworks */ = {isa = PBXBuildFile; productRef = B7723375296E5AD70046ACD1 /* CodeEditor */; };
+		B789B6A6297218A30029B961 /* ControlBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B789B6A5297218A30029B961 /* ControlBar.swift */; };
+		B789B6A8297218AF0029B961 /* ControlButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B789B6A7297218AF0029B961 /* ControlButton.swift */; };
+		B7B7FFF82976747600501AF5 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B7FFF72976747600501AF5 /* Persistence.swift */; };
+		B7CA9611296DF71D0003DD6F /* MetalToyShaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = B7CA9610296DF71D0003DD6F /* MetalToyShaders.metal */; };
+		B7CA9613296E01B00003DD6F /* MetalToyUserDylib.metal in Sources */ = {isa = PBXBuildFile; fileRef = B7CA9612296E01B00003DD6F /* MetalToyUserDylib.metal */; };
+		B7FB6DEF296F5BDE00ED1535 /* ViewExtractor in Frameworks */ = {isa = PBXBuildFile; productRef = B7FB6DEE296F5BDE00ED1535 /* ViewExtractor */; };
+		B7FB6DF2296F882F00ED1535 /* MetalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7FB6DF1296F882F00ED1535 /* MetalView.swift */; };
+		B7FB6DF6296F8D3000ED1535 /* Renderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7FB6DF5296F8D3000ED1535 /* Renderer.swift */; };
+		B7FB6DFC296F979C00ED1535 /* DefaultShader1 in Resources */ = {isa = PBXBuildFile; fileRef = B7FB6DFB296F979C00ED1535 /* DefaultShader1 */; };
+		B7FB6E02296FC68500ED1535 /* ErrorOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7FB6E01296FC68500ED1535 /* ErrorOverlay.swift */; };
+		B7FB6E042970D0A600ED1535 /* ToyShaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7FB6E032970D0A600ED1535 /* ToyShaderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,9 +51,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B727489F29750B3F00B7E0D8 /* ToyShader.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ToyShader.xcdatamodel; sourceTree = "<group>"; };
+		B72748A129751C5900B7E0D8 /* DefaultShader2 */ = {isa = PBXFileReference; lastKnownFileType = text; path = DefaultShader2; sourceTree = "<group>"; };
+		B73119F229733569004FC5F7 /* StartupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartupView.swift; sourceTree = "<group>"; };
+		B73119F4297357C4004FC5F7 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		B73119F82973B40C004FC5F7 /* EditShaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditShaderView.swift; sourceTree = "<group>"; };
+		B7311A332974B468004FC5F7 /* LazyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LazyView.swift; sourceTree = "<group>"; };
 		B74CEAF82967A2DE0072275B /* metaltoy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = metaltoy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B74CEAFB2967A2DE0072275B /* metaltoyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = metaltoyApp.swift; sourceTree = "<group>"; };
-		B74CEAFD2967A2DE0072275B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		B74CEAFF2967A2DF0072275B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B74CEB012967A2DF0072275B /* metaltoy.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = metaltoy.entitlements; sourceTree = "<group>"; };
 		B74CEB032967A2DF0072275B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -45,6 +67,19 @@
 		B74CEB132967A2DF0072275B /* metaltoyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = metaltoyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B74CEB172967A2DF0072275B /* metaltoyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = metaltoyUITests.swift; sourceTree = "<group>"; };
 		B74CEB192967A2DF0072275B /* metaltoyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = metaltoyUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		B74CEB292967A4150072275B /* ShaderTypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShaderTypes.h; sourceTree = "<group>"; };
+		B74CEB2A2967A61C0072275B /* metaltoy-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "metaltoy-Bridging-Header.h"; sourceTree = "<group>"; };
+		B789B6A5297218A30029B961 /* ControlBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlBar.swift; sourceTree = "<group>"; };
+		B789B6A7297218AF0029B961 /* ControlButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlButton.swift; sourceTree = "<group>"; };
+		B7B7FFF72976747600501AF5 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		B7CA9610296DF71D0003DD6F /* MetalToyShaders.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = MetalToyShaders.metal; sourceTree = "<group>"; };
+		B7CA9612296E01B00003DD6F /* MetalToyUserDylib.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = MetalToyUserDylib.metal; sourceTree = "<group>"; };
+		B7CA9614296E01F40003DD6F /* MetalToyUserDylib.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MetalToyUserDylib.h; sourceTree = "<group>"; };
+		B7FB6DF1296F882F00ED1535 /* MetalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetalView.swift; sourceTree = "<group>"; };
+		B7FB6DF5296F8D3000ED1535 /* Renderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Renderer.swift; sourceTree = "<group>"; };
+		B7FB6DFB296F979C00ED1535 /* DefaultShader1 */ = {isa = PBXFileReference; lastKnownFileType = text; path = DefaultShader1; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.metal; };
+		B7FB6E01296FC68500ED1535 /* ErrorOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorOverlay.swift; sourceTree = "<group>"; };
+		B7FB6E032970D0A600ED1535 /* ToyShaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToyShaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +87,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B7FB6DEF296F5BDE00ED1535 /* ViewExtractor in Frameworks */,
+				B7723376296E5AD70046ACD1 /* CodeEditor in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,11 +132,16 @@
 		B74CEAFA2967A2DE0072275B /* metaltoy */ = {
 			isa = PBXGroup;
 			children = (
+				B7FB6DF9296F972600ED1535 /* Resources */,
+				B7FB6DF0296F880400ED1535 /* Renderer */,
+				B7FB6DE0296F42D400ED1535 /* Views */,
 				B74CEAFB2967A2DE0072275B /* metaltoyApp.swift */,
-				B74CEAFD2967A2DE0072275B /* ContentView.swift */,
 				B74CEAFF2967A2DF0072275B /* Assets.xcassets */,
 				B74CEB012967A2DF0072275B /* metaltoy.entitlements */,
 				B74CEB022967A2DF0072275B /* Preview Content */,
+				B73119F4297357C4004FC5F7 /* Colors.xcassets */,
+				B727489E29750B3F00B7E0D8 /* ToyShader.xcdatamodeld */,
+				B7B7FFF72976747600501AF5 /* Persistence.swift */,
 			);
 			path = metaltoy;
 			sourceTree = "<group>";
@@ -129,6 +171,59 @@
 			path = metaltoyUITests;
 			sourceTree = "<group>";
 		};
+		B789B6A4297218810029B961 /* EditShaderView */ = {
+			isa = PBXGroup;
+			children = (
+				B73119F82973B40C004FC5F7 /* EditShaderView.swift */,
+				B789B6A5297218A30029B961 /* ControlBar.swift */,
+				B789B6A7297218AF0029B961 /* ControlButton.swift */,
+			);
+			path = EditShaderView;
+			sourceTree = "<group>";
+		};
+		B7FB6DE0296F42D400ED1535 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B789B6A4297218810029B961 /* EditShaderView */,
+				B7FB6DE1296F432200ED1535 /* ToyShaderView */,
+				B73119F229733569004FC5F7 /* StartupView.swift */,
+				B7311A332974B468004FC5F7 /* LazyView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B7FB6DE1296F432200ED1535 /* ToyShaderView */ = {
+			isa = PBXGroup;
+			children = (
+				B7FB6E01296FC68500ED1535 /* ErrorOverlay.swift */,
+				B7FB6DF1296F882F00ED1535 /* MetalView.swift */,
+				B7FB6E032970D0A600ED1535 /* ToyShaderView.swift */,
+			);
+			path = ToyShaderView;
+			sourceTree = "<group>";
+		};
+		B7FB6DF0296F880400ED1535 /* Renderer */ = {
+			isa = PBXGroup;
+			children = (
+				B74CEB292967A4150072275B /* ShaderTypes.h */,
+				B74CEB2A2967A61C0072275B /* metaltoy-Bridging-Header.h */,
+				B7CA9610296DF71D0003DD6F /* MetalToyShaders.metal */,
+				B7CA9612296E01B00003DD6F /* MetalToyUserDylib.metal */,
+				B7CA9614296E01F40003DD6F /* MetalToyUserDylib.h */,
+				B7FB6DF5296F8D3000ED1535 /* Renderer.swift */,
+			);
+			path = Renderer;
+			sourceTree = "<group>";
+		};
+		B7FB6DF9296F972600ED1535 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B7FB6DFB296F979C00ED1535 /* DefaultShader1 */,
+				B72748A129751C5900B7E0D8 /* DefaultShader2 */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -139,12 +234,18 @@
 				B74CEAF42967A2DE0072275B /* Sources */,
 				B74CEAF52967A2DE0072275B /* Frameworks */,
 				B74CEAF62967A2DE0072275B /* Resources */,
+				B7CA9615296E2F910003DD6F /* Build Dynamic Metal Library */,
+				B7CA9616296E2FFE0003DD6F /* Build Executable Metal Library */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = metaltoy;
+			packageProductDependencies = (
+				B7723375296E5AD70046ACD1 /* CodeEditor */,
+				B7FB6DEE296F5BDE00ED1535 /* ViewExtractor */,
+			);
 			productName = metaltoy;
 			productReference = B74CEAF82967A2DE0072275B /* metaltoy.app */;
 			productType = "com.apple.product-type.application";
@@ -197,6 +298,7 @@
 				TargetAttributes = {
 					B74CEAF72967A2DE0072275B = {
 						CreatedOnToolsVersion = 14.2;
+						LastSwiftMigration = 1420;
 					};
 					B74CEB082967A2DF0072275B = {
 						CreatedOnToolsVersion = 14.2;
@@ -217,6 +319,10 @@
 				Base,
 			);
 			mainGroup = B74CEAEF2967A2DE0072275B;
+			packageReferences = (
+				B7723374296E5AD70046ACD1 /* XCRemoteSwiftPackageReference "CodeEditor" */,
+				B7FB6DED296F5BDE00ED1535 /* XCRemoteSwiftPackageReference "ViewExtractor" */,
+			);
 			productRefGroup = B74CEAF92967A2DE0072275B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -234,6 +340,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				B74CEB042967A2DF0072275B /* Preview Assets.xcassets in Resources */,
+				B7FB6DFC296F979C00ED1535 /* DefaultShader1 in Resources */,
+				B72748A229751C5900B7E0D8 /* DefaultShader2 in Resources */,
+				B73119F5297357C4004FC5F7 /* Colors.xcassets in Resources */,
 				B74CEB002967A2DF0072275B /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -254,13 +363,68 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		B7CA9615296E2F910003DD6F /* Build Dynamic Metal Library */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/metaltoy/Renderer/MetalToyUserDylib.metal",
+			);
+			name = "Build Dynamic Metal Library";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/libUserDylib.metallib",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -x\n# Compiles the input source file (at $(SRCROOT)/Renderer/AAPLUserDylib.metal) and builds the dynamic\n# Metal library (at ${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/libUserDylib.metallib).\n# The \"Build Executable Metal Library\" script, which runs next, consumes the dynamic Metal library \n# output by this script.\nmetal -dynamiclib -fvisibility=hidden $SCRIPT_INPUT_FILE_0 -o $SCRIPT_OUTPUT_FILE_0 -install_name \"@executable_path/libUserDylib.metallib\"\n";
+		};
+		B7CA9616296E2FFE0003DD6F /* Build Executable Metal Library */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/metalToy/Renderer/MetalToyShaders.metal",
+			);
+			name = "Build Executable Metal Library";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MetalToyShaders.metallib",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -x\n# Builds AAPLShader.metallib which takes as input \n#     1) the AAPLShaders.metal source file and\n#     2) the libUserDylib.metalib file (as specified with \"-l UserDylib\") \n#        produced by the previous \"Build Dynamic Metal Library\" build phase.\n# Outputs AAPLShaders.metallib loaded at runtine in the -[AAPLRenderer loadMetallib] method.\nmetal -L${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH} -lUserDylib $SCRIPT_INPUT_FILE_0 -o $SCRIPT_OUTPUT_FILE_0\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		B74CEAF42967A2DE0072275B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B74CEAFE2967A2DE0072275B /* ContentView.swift in Sources */,
+				B7B7FFF82976747600501AF5 /* Persistence.swift in Sources */,
+				B73119F329733569004FC5F7 /* StartupView.swift in Sources */,
+				B7FB6E042970D0A600ED1535 /* ToyShaderView.swift in Sources */,
+				B7CA9613296E01B00003DD6F /* MetalToyUserDylib.metal in Sources */,
+				B7CA9611296DF71D0003DD6F /* MetalToyShaders.metal in Sources */,
+				B73119F92973B40C004FC5F7 /* EditShaderView.swift in Sources */,
+				B7FB6DF6296F8D3000ED1535 /* Renderer.swift in Sources */,
+				B7FB6E02296FC68500ED1535 /* ErrorOverlay.swift in Sources */,
+				B72748A029750B3F00B7E0D8 /* ToyShader.xcdatamodeld in Sources */,
 				B74CEAFC2967A2DE0072275B /* metaltoyApp.swift in Sources */,
+				B789B6A6297218A30029B961 /* ControlBar.swift in Sources */,
+				B789B6A8297218AF0029B961 /* ControlButton.swift in Sources */,
+				B7FB6DF2296F882F00ED1535 /* MetalView.swift in Sources */,
+				B7311A342974B468004FC5F7 /* LazyView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -411,24 +575,28 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = metaltoy/metaltoy.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"metaltoy/Preview Content\"";
 				DEVELOPMENT_TEAM = E9Q373XZ2W;
 				ENABLE_HARDENED_RUNTIME = YES;
+				"ENABLE_HARDENED_RUNTIME[sdk=macosx*]" = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = MetalToy;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
@@ -437,10 +605,13 @@
 				PRODUCT_BUNDLE_IDENTIFIER = net.devdude.metaltoy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = macosx;
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "metaltoy/Renderer/metaltoy-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -449,24 +620,28 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = metaltoy/metaltoy.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"metaltoy/Preview Content\"";
 				DEVELOPMENT_TEAM = E9Q373XZ2W;
 				ENABLE_HARDENED_RUNTIME = YES;
+				"ENABLE_HARDENED_RUNTIME[sdk=macosx*]" = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = MetalToy;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
@@ -475,10 +650,12 @@
 				PRODUCT_BUNDLE_IDENTIFIER = net.devdude.metaltoy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = macosx;
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "metaltoy/Renderer/metaltoy-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -497,10 +674,11 @@
 				PRODUCT_BUNDLE_IDENTIFIER = net.devdude.metaltoyTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = macosx;
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/metaltoy.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/metaltoy";
 			};
 			name = Debug;
@@ -520,10 +698,11 @@
 				PRODUCT_BUNDLE_IDENTIFIER = net.devdude.metaltoyTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = macosx;
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/metaltoy.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/metaltoy";
 			};
 			name = Release;
@@ -542,10 +721,11 @@
 				PRODUCT_BUNDLE_IDENTIFIER = net.devdude.metaltoyUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = macosx;
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = metaltoy;
 			};
 			name = Debug;
@@ -564,10 +744,11 @@
 				PRODUCT_BUNDLE_IDENTIFIER = net.devdude.metaltoyUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = macosx;
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = metaltoy;
 			};
 			name = Release;
@@ -612,6 +793,51 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B7723374296E5AD70046ACD1 /* XCRemoteSwiftPackageReference "CodeEditor" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ZeeZide/CodeEditor.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+		B7FB6DED296F5BDE00ED1535 /* XCRemoteSwiftPackageReference "ViewExtractor" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/GeorgeElsham/ViewExtractor.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B7723375296E5AD70046ACD1 /* CodeEditor */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B7723374296E5AD70046ACD1 /* XCRemoteSwiftPackageReference "CodeEditor" */;
+			productName = CodeEditor;
+		};
+		B7FB6DEE296F5BDE00ED1535 /* ViewExtractor */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B7FB6DED296F5BDE00ED1535 /* XCRemoteSwiftPackageReference "ViewExtractor" */;
+			productName = ViewExtractor;
+		};
+/* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		B727489E29750B3F00B7E0D8 /* ToyShader.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				B727489F29750B3F00B7E0D8 /* ToyShader.xcdatamodel */,
+			);
+			currentVersion = B727489F29750B3F00B7E0D8 /* ToyShader.xcdatamodel */;
+			path = ToyShader.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = B74CEAF02967A2DE0072275B /* Project object */;
 }

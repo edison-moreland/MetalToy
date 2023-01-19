@@ -1,0 +1,21 @@
+#include <metal_stdlib>
+
+using namespace metal;
+    
+#define backgroundColor float4(0.93, 0.96, 0.86, 0.0)
+#define foregroundColor float4(1.0, 0.37, 0.33, 0.0)
+
+namespace MetalToy
+{
+    float4 frag(float2 coord, float2 viewport, float time)
+    {
+        float2 orbit = viewport/2 + (float2(sin(time), cos(time))*100);
+    
+        float distance = length(coord - orbit) - 10;
+        if (distance > 0) {
+            return backgroundColor;
+        } else {
+            return foregroundColor;
+        }
+    }
+}
