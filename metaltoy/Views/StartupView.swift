@@ -21,36 +21,19 @@ struct RecentShadersGrid<Cell: View>: View {
     
     let cellView: (ToyShader?) -> Cell
     
-    // TODO: I think this solution for getting a grid is really gross
     var body: some View {
         Grid {
             GridRow {
-                ForEach(upperRow(recentShaders), id: \.self) { shader in
-                    cellView(shader)
+                ForEach(0..<5, id: \.self) { i in
+                    cellView(recentShaders[safe: i])
                 }
             }
             GridRow {
-                ForEach(lowerRow(recentShaders), id: \.self) { shaderID in
-                    cellView(shaderID)
+                ForEach(5..<10, id: \.self) { i in
+                    cellView(recentShaders[safe: i])
                 }
             }
         }
-    }
-    
-    private func upperRow(_ shaders: FetchedResults<ToyShader>) -> [ToyShader?] {
-        var newUpperRow: [ToyShader?] = []
-        for i in 0..<5 {
-            newUpperRow.append(shaders[safe: i])
-        }
-        return newUpperRow
-    }
-    
-    private func lowerRow(_ shaders: FetchedResults<ToyShader>) -> [ToyShader?] {
-        var newLowerRow: [ToyShader?] = []
-        for i in 0..<5 {
-            newLowerRow.append(shaders[safe: 5+i])
-        }
-        return newLowerRow
     }
 }
 
