@@ -10,7 +10,6 @@
 		B72748A029750B3F00B7E0D8 /* ToyShader.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B727489E29750B3F00B7E0D8 /* ToyShader.xcdatamodeld */; };
 		B72748A229751C5900B7E0D8 /* DefaultShader2 in Resources */ = {isa = PBXBuildFile; fileRef = B72748A129751C5900B7E0D8 /* DefaultShader2 */; };
 		B73119F329733569004FC5F7 /* StartupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B73119F229733569004FC5F7 /* StartupView.swift */; };
-		B73119F5297357C4004FC5F7 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B73119F4297357C4004FC5F7 /* Colors.xcassets */; };
 		B73119F92973B40C004FC5F7 /* EditShaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B73119F82973B40C004FC5F7 /* EditShaderView.swift */; };
 		B7311A342974B468004FC5F7 /* LazyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7311A332974B468004FC5F7 /* LazyView.swift */; };
 		B74CEAFC2967A2DE0072275B /* metaltoyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74CEAFB2967A2DE0072275B /* metaltoyApp.swift */; };
@@ -53,7 +52,6 @@
 		B727489F29750B3F00B7E0D8 /* ToyShader.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ToyShader.xcdatamodel; sourceTree = "<group>"; };
 		B72748A129751C5900B7E0D8 /* DefaultShader2 */ = {isa = PBXFileReference; lastKnownFileType = text; path = DefaultShader2; sourceTree = "<group>"; };
 		B73119F229733569004FC5F7 /* StartupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartupView.swift; sourceTree = "<group>"; };
-		B73119F4297357C4004FC5F7 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		B73119F82973B40C004FC5F7 /* EditShaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditShaderView.swift; sourceTree = "<group>"; };
 		B7311A332974B468004FC5F7 /* LazyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LazyView.swift; sourceTree = "<group>"; };
 		B74CEAF82967A2DE0072275B /* metaltoy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = metaltoy.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -137,7 +135,6 @@
 				B74CEAFF2967A2DF0072275B /* Assets.xcassets */,
 				B74CEB012967A2DF0072275B /* metaltoy.entitlements */,
 				B74CEB022967A2DF0072275B /* Preview Content */,
-				B73119F4297357C4004FC5F7 /* Colors.xcassets */,
 				B727489E29750B3F00B7E0D8 /* ToyShader.xcdatamodeld */,
 				B7B7FFF72976747600501AF5 /* Persistence.swift */,
 			);
@@ -339,7 +336,6 @@
 				B74CEB042967A2DF0072275B /* Preview Assets.xcassets in Resources */,
 				B7FB6DFC296F979C00ED1535 /* DefaultShader1 in Resources */,
 				B72748A229751C5900B7E0D8 /* DefaultShader2 in Resources */,
-				B73119F5297357C4004FC5F7 /* Colors.xcassets in Resources */,
 				B74CEB002967A2DF0072275B /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

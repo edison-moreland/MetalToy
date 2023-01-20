@@ -49,7 +49,7 @@ struct PersistenceController {
         newShader.source = source
         newShader.createdOn = Date()
         newShader.updatedOn = newShader.createdOn
-        
+        newShader.revision = 1
         
         try! context.save()
         
@@ -63,7 +63,11 @@ struct PersistenceController {
     func getToyShader(id: NSManagedObjectID) -> ToyShader? {
         return try! context.existingObject(with: id) as? ToyShader
     }
-   
+
+    func getToyShader(url: URL) -> ToyShader? {
+        return getToyShader(id: getID(for: url)!)
+    }
+
     
     static let recentShadersRequest = {
         let request: NSFetchRequest<ToyShader> = NSFetchRequest(entityName: "ToyShader")
@@ -76,19 +80,28 @@ struct PersistenceController {
     }()
     
     func updateToyShader(id: NSManagedObjectID, source: String) {
-        let shader = getToyShader(id: id)!
-        
-        shader.setValue(source, forKey: "source")
-        
-        try! context.save()
+        context.perform {
+            let shader = getToyShader(id: id)!
+            
+            //shader.setValue(source, forKey: "source")
+            shader.setValuesForKeys([
+                "source": source,
+                "revision": shader.revision+1,
+                "updatedOn": Date()
+            ])
+            
+            try! context.save()
+        }
     }
     
     func deleteToyShader(id: NSManagedObjectID) {
-        let shader = getToyShader(id: id)!
-        
-        context.delete(shader)
-        
-        try! context.save()
+        context.perform {
+            let shader = getToyShader(id: id)!
+            
+            context.delete(shader)
+            
+            try! context.save()
+        }
     }
 }
 

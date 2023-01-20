@@ -24,33 +24,45 @@ struct ColoredButton : ButtonStyle {
 }
 
 struct ControlButton: View {
-    static var buttonSize: CGFloat = 40
-    
     var icon: String
     var callback: () -> Void
     
     var body: some View {
         Button(action: callback) {
             Image(systemName: icon)
-                .font(.system(size: 15, weight:.heavy))
-                .frame(width: ControlButton.buttonSize,
-                       height: ControlButton.buttonSize)
         }
         .buttonStyle(ColoredButton(.secondary, pressedColor: .primary))
     }
 }
 
-struct ControlBar<Content: View>: View {
-    @ViewBuilder let content: Content
+struct ControlBar<LeadingContent: View, TrailingContent: View>: View {
+    @ViewBuilder let leading: LeadingContent
+    @ViewBuilder let trailing: TrailingContent
     
     var body: some View {
-        Extract(content) { views in
-            HStack(spacing: 0) {
-                ForEach(views) { view in
-                    view
+        HStack(spacing: 0) {
+            Extract(leading) { views in
+                HStack(spacing: 0) {
+                    ForEach(views) { view in
+                        view
+                            .frame(width: 40,
+                                   height: 40)
+                    }
                 }
-            }.background(Material.bar)
+            }
+            Spacer()
+            Extract(trailing) { views in
+                HStack(spacing: 0) {
+                    ForEach(views) { view in
+                        view
+                            .frame(width: 40,
+                                   height: 40)
+                    }
+                }
+            }
         }
+        .font(.system(size: 15, weight: .heavy))
+        .background(.bar)
     }
 }
 
@@ -60,10 +72,11 @@ struct ControlBar_Previews: PreviewProvider {
             "play", "pause", "square.and.arrow.down", "doc"
         ]
         
-        ControlBar {
+        ControlBar(leading: {
             ForEach(icons, id: \.self) {icon in
                 ControlButton(icon: icon) {}
             }
-        }.frame(width: ControlButton.buttonSize*CGFloat(icons.count))
+        }, trailing: {
+        })
     }
 }
