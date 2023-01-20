@@ -9,6 +9,8 @@ import SwiftUI
 import CodeEditor
 
 struct EditShaderView: View {
+    @Environment(\.openWindow) private var openWindow
+    
     @State var previewContent: String = ""
     @State var editorContent: String = ""
     @ObservedObject var shader: ToyShader
@@ -18,11 +20,13 @@ struct EditShaderView: View {
             ToyShaderView(shader: $previewContent)
             VStack(alignment: .leading, spacing: 0) {
                 ControlBar(leading: {
-                    ControlButton(icon: "play") { onSubmit() }
-                    ControlButton(icon: "doc") { onSave() }
-                    Text("\(shader.revision)")
+                    ControlButton("Submit", icon: "play") { onSubmit() }
                 }, trailing: {
-                    ControlButton(icon: "trash") {onDelete()}
+                    Text("\(shader.revision)")
+                        .help("Revision")
+                    ControlButton("Save", icon: "doc") { onSave() }
+                    ControlButton("Duplicate", icon: "doc.on.doc") { onDuplicate() }
+                    ControlButton("Delete", icon: "trash") { onDelete() }
                 })
                 CodeEditor(source: $editorContent,
                            language: .cpp,
@@ -53,6 +57,11 @@ struct EditShaderView: View {
         // Update source in database
         onSubmit()
         PersistenceController.shared.updateToyShader(id: shader.objectID, source: editorContent)
+    }
+    
+    private func onDuplicate() {
+        let newShader = PersistenceController.shared.newToyShader(source: shader.source!)
+        openWindow(value: newShader.objectID.uriRepresentation())
     }
     
     private func onDelete() {

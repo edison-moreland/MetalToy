@@ -24,14 +24,22 @@ struct ColoredButton : ButtonStyle {
 }
 
 struct ControlButton: View {
+    var help: String
     var icon: String
     var callback: () -> Void
+    
+    init(_ help: String, icon: String, callback: @escaping () -> Void) {
+        self.help = help
+        self.icon = icon
+        self.callback = callback
+    }
     
     var body: some View {
         Button(action: callback) {
             Image(systemName: icon)
         }
         .buttonStyle(ColoredButton(.secondary, pressedColor: .primary))
+        .help(help)
     }
 }
 
@@ -74,7 +82,7 @@ struct ControlBar_Previews: PreviewProvider {
         
         ControlBar(leading: {
             ForEach(icons, id: \.self) {icon in
-                ControlButton(icon: icon) {}
+                ControlButton(icon, icon: icon) {}
             }
         }, trailing: {
         })
