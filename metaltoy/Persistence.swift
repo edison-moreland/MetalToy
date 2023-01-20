@@ -82,5 +82,13 @@ struct PersistenceController {
         
         try! context.save()
     }
+    
+    func deleteToyShader(id: NSManagedObjectID) {
+        let shader = getToyShader(id: id)!
+        
+        context.delete(shader)
+        
+        try! context.save()
+    }
 }
 

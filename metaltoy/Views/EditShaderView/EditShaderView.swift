@@ -11,7 +11,7 @@ import CodeEditor
 struct EditShaderView: View {
     @State var previewContent: String = ""
     @State var editorContent: String = ""
-    @State var shaderID: NSManagedObjectID?
+    @State var shaderID: NSManagedObjectID
 
     var body: some View {
         HSplitView {
@@ -20,6 +20,8 @@ struct EditShaderView: View {
                 ControlBar() {
                     ControlButton(icon: "play") { onSubmit() }
                     ControlButton(icon: "doc") { onSave() }
+                    Spacer()
+                    ControlButton(icon: "trash") {onDelete()}
                 }
                 CodeEditor(source: $editorContent,
                            language: .cpp,
@@ -28,15 +30,6 @@ struct EditShaderView: View {
             }
         }
         .onAppear {
-            guard let shaderID else {
-                let newShader = PersistenceController.shared.newToyShader()
-                
-                self.shaderID = newShader.objectID
-                self.editorContent = newShader.source!
-                self.previewContent = self.editorContent
-                return
-            }
-           
             let shader = PersistenceController.shared.getToyShader(id: shaderID)!
             self.shaderID = shaderID
             self.editorContent = shader.source!
@@ -50,21 +43,23 @@ struct EditShaderView: View {
     }
     
     private func onSave() {
-        guard let shaderID else {
-            return
-        }
-        
         // Update source in database
         onSubmit()
         PersistenceController.shared.updateToyShader(id: shaderID, source: editorContent)
+    }
+    
+    private func onDelete() {
+        PersistenceController.shared.deleteToyShader(id: shaderID)
+        editorContent = ""
+        previewContent = ""
+        // TODO: Close editor window
     }
 }
 
 struct EditShaderView_Previews: PreviewProvider {
     static var previews: some View {
         let shader = PersistenceController.shared.newToyShader()
-        let shaderID = PersistenceController.shared.getID(for: shader.objectID.uriRepresentation())
         
-        EditShaderView(shaderID: shaderID)
+        EditShaderView(shaderID: shader.objectID)
     }
 }

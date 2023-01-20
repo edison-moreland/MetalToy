@@ -21,7 +21,6 @@
 		B74CEB1A2967A2DF0072275B /* metaltoyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74CEB192967A2DF0072275B /* metaltoyUITestsLaunchTests.swift */; };
 		B7723376296E5AD70046ACD1 /* CodeEditor in Frameworks */ = {isa = PBXBuildFile; productRef = B7723375296E5AD70046ACD1 /* CodeEditor */; };
 		B789B6A6297218A30029B961 /* ControlBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B789B6A5297218A30029B961 /* ControlBar.swift */; };
-		B789B6A8297218AF0029B961 /* ControlButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B789B6A7297218AF0029B961 /* ControlButton.swift */; };
 		B7B7FFF82976747600501AF5 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B7FFF72976747600501AF5 /* Persistence.swift */; };
 		B7CA9611296DF71D0003DD6F /* MetalToyShaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = B7CA9610296DF71D0003DD6F /* MetalToyShaders.metal */; };
 		B7CA9613296E01B00003DD6F /* MetalToyUserDylib.metal in Sources */ = {isa = PBXBuildFile; fileRef = B7CA9612296E01B00003DD6F /* MetalToyUserDylib.metal */; };
@@ -70,7 +69,6 @@
 		B74CEB292967A4150072275B /* ShaderTypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShaderTypes.h; sourceTree = "<group>"; };
 		B74CEB2A2967A61C0072275B /* metaltoy-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "metaltoy-Bridging-Header.h"; sourceTree = "<group>"; };
 		B789B6A5297218A30029B961 /* ControlBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlBar.swift; sourceTree = "<group>"; };
-		B789B6A7297218AF0029B961 /* ControlButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlButton.swift; sourceTree = "<group>"; };
 		B7B7FFF72976747600501AF5 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		B7CA9610296DF71D0003DD6F /* MetalToyShaders.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = MetalToyShaders.metal; sourceTree = "<group>"; };
 		B7CA9612296E01B00003DD6F /* MetalToyUserDylib.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = MetalToyUserDylib.metal; sourceTree = "<group>"; };
@@ -176,7 +174,6 @@
 			children = (
 				B73119F82973B40C004FC5F7 /* EditShaderView.swift */,
 				B789B6A5297218A30029B961 /* ControlBar.swift */,
-				B789B6A7297218AF0029B961 /* ControlButton.swift */,
 			);
 			path = EditShaderView;
 			sourceTree = "<group>";
@@ -422,7 +419,6 @@
 				B72748A029750B3F00B7E0D8 /* ToyShader.xcdatamodeld in Sources */,
 				B74CEAFC2967A2DE0072275B /* metaltoyApp.swift in Sources */,
 				B789B6A6297218A30029B961 /* ControlBar.swift in Sources */,
-				B789B6A8297218AF0029B961 /* ControlButton.swift in Sources */,
 				B7FB6DF2296F882F00ED1535 /* MetalView.swift in Sources */,
 				B7311A342974B468004FC5F7 /* LazyView.swift in Sources */,
 			);

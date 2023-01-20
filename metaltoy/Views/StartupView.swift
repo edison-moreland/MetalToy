@@ -75,7 +75,7 @@ struct StartupView: View {
                 .aspectRatio(contentMode: .fit)
                 .frame(width:900, height: 250)
             RecentShadersGrid { shader in
-                Button(action: { openEditor(shader?.objectID) }) {
+                Button(action: { openEditor(shader) }) {
                     if let shader {
                         ShaderPreview(shader: shader)
                     } else {
@@ -97,12 +97,12 @@ struct StartupView: View {
 
     }
     
-    private func openEditor(_ id: NSManagedObjectID?) {
+    private func openEditor(_ shader: ToyShader?) {
         guard supportsMultipleWindows else {
             return
         }
         
-        guard let id else {
+        guard let id = shader?.objectID else {
             let newShader = PersistenceController.shared.newToyShader()
             openWindow(value: newShader.objectID.uriRepresentation())
             return

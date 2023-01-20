@@ -39,11 +39,7 @@ struct metaltoyApp: App {
         }
 
         WindowGroup("Editor", for: URL.self) { $shaderID in
-            let id = shaderID.map {
-                PersistenceController.shared.getID(for: $0)
-            } ?? nil
-            
-            EditShaderView(shaderID: id)
+            EditShaderView(shaderID: PersistenceController.shared.getID(for: shaderID!)!)
                 .environment(\.managedObjectContext, PersistenceController.shared.context)
         }
     }
