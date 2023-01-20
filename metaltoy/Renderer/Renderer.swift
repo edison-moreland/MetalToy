@@ -135,7 +135,10 @@ extension Renderer: MTKViewDelegate {
         commandEncoder?.drawPrimitives(type: .triangle, vertexStart: 0, vertexCount: vertices.count)
         commandEncoder?.endEncoding()
         
-        commandBuffer?.present(drawable)
         commandBuffer?.commit()
+        
+        commandBuffer?.waitUntilScheduled()
+        
+        drawable.present()
     }
 }

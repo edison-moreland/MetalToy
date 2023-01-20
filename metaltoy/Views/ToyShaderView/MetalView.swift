@@ -5,6 +5,9 @@
 //  Created by Edison Moreland on 1/11/23.
 //
 
+// Potential fix for laggy rescaling
+// https://github.com/trishume/MetalTest/blob/master/MetalTest2/MetalLayerView.swift
+
 import SwiftUI
 import MetalKit
 import CryptoKit
@@ -51,6 +54,8 @@ class KitMetalView: MTKView {
         }
         colorPixelFormat = .bgra8Unorm
         preferredFramesPerSecond = 60
+        presentsWithTransaction = true
+        needsDisplay = true
         renderer = Renderer(device: defaultDevice, scale: scale)
         delegate = renderer
     }
