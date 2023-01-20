@@ -21,34 +21,30 @@ func loadShader(name: String) -> String {
 struct PersistenceController {
     static let shared = PersistenceController()
     
-    static var preview: PersistenceController = {
-        let result = PersistenceController(inMemory: true)
-        let viewContent = result.container.viewContext
-        
-        _ = PersistenceController.newToyShader(viewContent, source: defaultShader1)
-        _ = PersistenceController.newToyShader(viewContent, source: defaultShader2)
-
-        try! viewContent.save()
-        
-        return result
-    }()
-    
     let container: NSPersistentCloudKitContainer
+    let context: NSManagedObjectContext
     
-    init(inMemory: Bool = false) {
+    private init(inMemory: Bool = false) {
         container = NSPersistentCloudKitContainer(name: "ToyShader")
-        if inMemory {
-            container.persistentStoreDescriptions.first!.url = URL(fileURLWithPath: "/dev/null")
-        }
+        #if DEBUG
+        container.persistentStoreDescriptions.first!.url = URL(fileURLWithPath: "/dev/null")
+        #endif
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
                 fatalError("Unresolved error \(error), \(error.userInfo)")
             }
         })
         container.viewContext.automaticallyMergesChangesFromParent = true
+        
+        context = container.viewContext
+        
+        #if DEBUG
+        _ = self.newToyShader(source: defaultShader1)
+        _ = self.newToyShader(source: defaultShader2)
+        #endif
     }
     
-    static func newToyShader(_ context: NSManagedObjectContext, source: String = defaultShader1) -> ToyShader {
+    func newToyShader(source: String = defaultShader1) -> ToyShader {
         let newShader = ToyShader(context: context)
         newShader.source = source
         newShader.createdOn = Date()
@@ -60,36 +56,27 @@ struct PersistenceController {
         return newShader
     }
     
-    static func getID(_ context: NSManagedObjectContext, for url: URL) -> NSManagedObjectID? {
+    func getID( for url: URL) -> NSManagedObjectID? {
         return context.persistentStoreCoordinator?.managedObjectID(forURIRepresentation: url)
     }
     
-    static func getToyShader(_ context: NSManagedObjectContext, id: NSManagedObjectID) -> ToyShader? {
+    func getToyShader(id: NSManagedObjectID) -> ToyShader? {
         return try! context.existingObject(with: id) as? ToyShader
     }
    
-    static func getToyShader(_ context: NSManagedObjectContext, url: URL) -> ToyShader? {
-        let objectID = PersistenceController.getID(context, for: url)
-        
-        return objectID.map {
-            PersistenceController.getToyShader(context, id: $0)
-        }!
-    }
     
-    static func getRecentShaders(context: NSManagedObjectContext) -> [ToyShader] {
+    static let recentShadersRequest = {
         let request: NSFetchRequest<ToyShader> = NSFetchRequest(entityName: "ToyShader")
         request.fetchLimit = 5*2
         request.sortDescriptors = [
             NSSortDescriptor(keyPath:  \ToyShader.updatedOn, ascending: false)
         ]
         
-        let shaders = try? context.fetch(request)
-        
-        return shaders ?? []
-    }
+        return request
+    }()
     
-    static func updateToyShader(_ context: NSManagedObjectContext, id: NSManagedObjectID, source: String) {
-        let shader = PersistenceController.getToyShader(context, id: id)!
+    func updateToyShader(id: NSManagedObjectID, source: String) {
+        let shader = getToyShader(id: id)!
         
         shader.setValue(source, forKey: "source")
         

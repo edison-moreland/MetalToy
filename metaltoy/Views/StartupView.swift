@@ -16,82 +16,55 @@ extension Collection {
 }
 
 struct RecentShadersGrid<Cell: View>: View {
-    @Environment(\.controlActiveState) var controlActiveState
-    @Environment(\.managedObjectContext) var viewContext
+    @FetchRequest(fetchRequest: PersistenceController.recentShadersRequest)
+    private var recentShaders: FetchedResults<ToyShader>
     
-    @State var upperRow: [NSManagedObjectID?] = []
-    @State var lowerRow: [NSManagedObjectID?] = []
-    let cellView: (NSManagedObjectID?) -> Cell
+    let cellView: (ToyShader?) -> Cell
     
+    // TODO: I think this solution for getting a grid is really gross
     var body: some View {
         Grid {
             GridRow {
-                ForEach(upperRow, id: \.self) { shaderID in
-                    cellView(shaderID)
+                ForEach(upperRow(recentShaders), id: \.self) { shader in
+                    cellView(shader)
                 }
             }
             GridRow {
-                ForEach(lowerRow, id: \.self) { shaderID in
+                ForEach(lowerRow(recentShaders), id: \.self) { shaderID in
                     cellView(shaderID)
                 }
             }
         }
-        .onChange(of: controlActiveState) { activeState in
-            if activeState == .key {
-                updateRows()
-            }
-        }
-        .onAppear {
-            updateRows()
-        }
     }
     
-    private func updateRows() {
-        let recentShaders = PersistenceController.getRecentShaders(context: viewContext)
-        
-        var newUpperRow: [NSManagedObjectID?] = []
+    private func upperRow(_ shaders: FetchedResults<ToyShader>) -> [ToyShader?] {
+        var newUpperRow: [ToyShader?] = []
         for i in 0..<5 {
-            newUpperRow.append(recentShaders[safe: i]?.objectID)
+            newUpperRow.append(shaders[safe: i])
         }
-        self.upperRow = newUpperRow
-        
-        var newLowerRow: [NSManagedObjectID?] = []
-        for i in 0..<5 {
-            newLowerRow.append(recentShaders[safe: 5+i]?.objectID)
-        }
-        self.lowerRow = newLowerRow
+        return newUpperRow
     }
     
+    private func lowerRow(_ shaders: FetchedResults<ToyShader>) -> [ToyShader?] {
+        var newLowerRow: [ToyShader?] = []
+        for i in 0..<5 {
+            newLowerRow.append(shaders[safe: 5+i])
+        }
+        return newLowerRow
+    }
 }
 
 struct ShaderPreview: View {
-    @Environment(\.managedObjectContext) var viewContext
-    @Environment(\.controlActiveState) var controlActiveState
+    @ObservedObject var shader: ToyShader
     
-    @State var shaderSource: String = ""
-    let shaderID: NSManagedObjectID
-
     var body: some View {
-        ToyShaderView(shader: $shaderSource, scale: 0.4)
-        .onChange(of: controlActiveState) { activeState in
-            if activeState == .key {
-                updateSource()
-            }
-        }
-        .onAppear {
-            updateSource()
-        }
-    }
-    
-    private func updateSource() {
-        shaderSource = PersistenceController.getToyShader(viewContext, id: shaderID).map { shader in shader.source! } ?? ""
+        ToyShaderView(shader: Binding($shader.source) ?? .constant(""), scale: 0.4)
     }
 }
 
 struct StartupView: View {
     @Environment(\.openWindow) private var openWindow
     @Environment(\.supportsMultipleWindows) private var supportsMultipleWindows
-    @Environment(\.managedObjectContext) var viewContext
     
     var body: some View {
         VStack {
@@ -101,10 +74,10 @@ struct StartupView: View {
                 .foregroundColor(Color("AppOrange"))
                 .aspectRatio(contentMode: .fit)
                 .frame(width:900, height: 250)
-            RecentShadersGrid { shaderID in
-                Button(action: { openEditor(shaderID) }) {
-                    if let shaderID {
-                        ShaderPreview(shaderID: shaderID)
+            RecentShadersGrid { shader in
+                Button(action: { openEditor(shader?.objectID) }) {
+                    if let shader {
+                        ShaderPreview(shader: shader)
                     } else {
                         Image(systemName: "plus")
                             .foregroundColor(Color("AppOrange"))
@@ -130,7 +103,7 @@ struct StartupView: View {
         }
         
         guard let id else {
-            let newShader = PersistenceController.newToyShader(viewContext)
+            let newShader = PersistenceController.shared.newToyShader()
             openWindow(value: newShader.objectID.uriRepresentation())
             return
         }
@@ -142,6 +115,6 @@ struct StartupView: View {
 struct StartupView_Previews: PreviewProvider {
     static var previews: some View {
         StartupView()
-            .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+            .environment(\.managedObjectContext, PersistenceController.shared.context)
     }
 }

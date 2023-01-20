@@ -9,8 +9,6 @@ import SwiftUI
 import CodeEditor
 
 struct EditShaderView: View {
-    @Environment(\.managedObjectContext) var viewContext
-    
     @State var previewContent: String = ""
     @State var editorContent: String = ""
     @State var shaderID: NSManagedObjectID?
@@ -31,7 +29,7 @@ struct EditShaderView: View {
         }
         .onAppear {
             guard let shaderID else {
-                let newShader = PersistenceController.newToyShader(viewContext)
+                let newShader = PersistenceController.shared.newToyShader()
                 
                 self.shaderID = newShader.objectID
                 self.editorContent = newShader.source!
@@ -39,7 +37,7 @@ struct EditShaderView: View {
                 return
             }
            
-            let shader = PersistenceController.getToyShader(viewContext, id: shaderID)!
+            let shader = PersistenceController.shared.getToyShader(id: shaderID)!
             self.shaderID = shaderID
             self.editorContent = shader.source!
             self.previewContent = self.editorContent
@@ -58,17 +56,15 @@ struct EditShaderView: View {
         
         // Update source in database
         onSubmit()
-        PersistenceController.updateToyShader(viewContext, id: shaderID, source: editorContent)
+        PersistenceController.shared.updateToyShader(id: shaderID, source: editorContent)
     }
 }
 
 struct EditShaderView_Previews: PreviewProvider {
     static var previews: some View {
-        let context = PersistenceController.preview.container.viewContext
-        let shader = PersistenceController.newToyShader(context)
-        let shaderID = PersistenceController.getID(context, for: shader.objectID.uriRepresentation())
+        let shader = PersistenceController.shared.newToyShader()
+        let shaderID = PersistenceController.shared.getID(for: shader.objectID.uriRepresentation())
         
         EditShaderView(shaderID: shaderID)
-            .environment(\.managedObjectContext, context)
     }
 }

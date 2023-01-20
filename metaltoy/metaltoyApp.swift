@@ -26,17 +26,11 @@ struct metaltoyApp: App {
             NSWindow.allowsAutomaticWindowTabbing = false
         }
     }
-   
-    #if DEBUG
-    let persistenceController = PersistenceController.preview
-    #else
-    let persistenceController = PersistenceController.shared
-    #endif
     
     var body: some Scene {
         WindowGroup {
             StartupView()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+                .environment(\.managedObjectContext, PersistenceController.shared.context)
         }
         .windowResizabilityContentSize()
         .commands {
@@ -46,11 +40,11 @@ struct metaltoyApp: App {
 
         WindowGroup("Editor", for: URL.self) { $shaderID in
             let id = shaderID.map {
-                PersistenceController.getID(persistenceController.container.viewContext, for: $0)
+                PersistenceController.shared.getID(for: $0)
             } ?? nil
             
             EditShaderView(shaderID: id)
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+                .environment(\.managedObjectContext, PersistenceController.shared.context)
         }
     }
 }
