@@ -20,7 +20,7 @@
 		B74CEB1A2967A2DF0072275B /* metaltoyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74CEB192967A2DF0072275B /* metaltoyUITestsLaunchTests.swift */; };
 		B7723376296E5AD70046ACD1 /* CodeEditor in Frameworks */ = {isa = PBXBuildFile; productRef = B7723375296E5AD70046ACD1 /* CodeEditor */; };
 		B789B6A6297218A30029B961 /* ControlBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B789B6A5297218A30029B961 /* ControlBar.swift */; };
-		B7B7FFF82976747600501AF5 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B7FFF72976747600501AF5 /* Persistence.swift */; };
+		B7B7FFF82976747600501AF5 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B7FFF72976747600501AF5 /* DataStore.swift */; };
 		B7CA9611296DF71D0003DD6F /* MetalToyShaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = B7CA9610296DF71D0003DD6F /* MetalToyShaders.metal */; };
 		B7CA9613296E01B00003DD6F /* MetalToyUserDylib.metal in Sources */ = {isa = PBXBuildFile; fileRef = B7CA9612296E01B00003DD6F /* MetalToyUserDylib.metal */; };
 		B7FB6DEF296F5BDE00ED1535 /* ViewExtractor in Frameworks */ = {isa = PBXBuildFile; productRef = B7FB6DEE296F5BDE00ED1535 /* ViewExtractor */; };
@@ -67,7 +67,7 @@
 		B74CEB292967A4150072275B /* ShaderTypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShaderTypes.h; sourceTree = "<group>"; };
 		B74CEB2A2967A61C0072275B /* metaltoy-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "metaltoy-Bridging-Header.h"; sourceTree = "<group>"; };
 		B789B6A5297218A30029B961 /* ControlBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlBar.swift; sourceTree = "<group>"; };
-		B7B7FFF72976747600501AF5 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		B7B7FFF72976747600501AF5 /* DataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
 		B7CA9610296DF71D0003DD6F /* MetalToyShaders.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = MetalToyShaders.metal; sourceTree = "<group>"; };
 		B7CA9612296E01B00003DD6F /* MetalToyUserDylib.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = MetalToyUserDylib.metal; sourceTree = "<group>"; };
 		B7CA9614296E01F40003DD6F /* MetalToyUserDylib.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MetalToyUserDylib.h; sourceTree = "<group>"; };
@@ -136,7 +136,7 @@
 				B74CEB012967A2DF0072275B /* metaltoy.entitlements */,
 				B74CEB022967A2DF0072275B /* Preview Content */,
 				B727489E29750B3F00B7E0D8 /* ToyShader.xcdatamodeld */,
-				B7B7FFF72976747600501AF5 /* Persistence.swift */,
+				B7B7FFF72976747600501AF5 /* DataStore.swift */,
 			);
 			path = metaltoy;
 			sourceTree = "<group>";
@@ -404,7 +404,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B7B7FFF82976747600501AF5 /* Persistence.swift in Sources */,
+				B7B7FFF82976747600501AF5 /* DataStore.swift in Sources */,
 				B73119F329733569004FC5F7 /* StartupView.swift in Sources */,
 				B7FB6E042970D0A600ED1535 /* ToyShaderView.swift in Sources */,
 				B7CA9613296E01B00003DD6F /* MetalToyUserDylib.metal in Sources */,

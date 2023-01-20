@@ -18,17 +18,21 @@ func loadShader(name: String) -> String {
     return data
 }
 
-struct PersistenceController {
-    static let shared = PersistenceController()
+struct DataStore {
+    #if DEBUG
+    static let shared = DataStore(inMemory: true, withTestShaders: true)
+    #else
+    static let shared = DataStore()
+    #endif
     
     let container: NSPersistentCloudKitContainer
     let context: NSManagedObjectContext
     
-    private init(inMemory: Bool = false) {
+    init(inMemory: Bool = false, withTestShaders: Bool = false) {
         container = NSPersistentCloudKitContainer(name: "ToyShader")
-        #if DEBUG
-        container.persistentStoreDescriptions.first!.url = URL(fileURLWithPath: "/dev/null")
-        #endif
+        if inMemory {
+            container.persistentStoreDescriptions.first!.url = URL(fileURLWithPath: "/dev/null")
+        }
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
                 fatalError("Unresolved error \(error), \(error.userInfo)")
@@ -38,10 +42,10 @@ struct PersistenceController {
         
         context = container.viewContext
         
-        #if DEBUG
-        _ = self.newToyShader(source: defaultShader1)
-        _ = self.newToyShader(source: defaultShader2)
-        #endif
+        if inMemory && withTestShaders {
+            _ = self.newToyShader(source: defaultShader1)
+            _ = self.newToyShader(source: defaultShader2)
+        }
     }
     
     func newToyShader(source: String = defaultShader1) -> ToyShader {

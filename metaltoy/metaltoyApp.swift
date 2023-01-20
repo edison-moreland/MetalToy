@@ -30,7 +30,7 @@ struct metaltoyApp: App {
     var body: some Scene {
         WindowGroup {
             StartupView()
-                .environment(\.managedObjectContext, PersistenceController.shared.context)
+                .environment(\.managedObjectContext, DataStore.shared.context)
         }
         .windowResizabilityContentSize()
         .commands {
@@ -39,8 +39,8 @@ struct metaltoyApp: App {
         }
 
         WindowGroup("Editor", for: URL.self) { $shaderID in
-            EditShaderView(shader: PersistenceController.shared.getToyShader(url: shaderID!)!)
-                .environment(\.managedObjectContext, PersistenceController.shared.context)
+            EditShaderView(shader: DataStore.shared.getToyShader(url: shaderID!)!)
+                .environment(\.managedObjectContext, DataStore.shared.context)
         }
     }
 }
