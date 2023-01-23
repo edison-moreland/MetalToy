@@ -16,7 +16,7 @@ extension Collection {
 }
 
 struct RecentShadersGrid<Cell: View>: View {
-    @FetchRequest(fetchRequest: PersistenceController.recentShadersRequest)
+    @FetchRequest(fetchRequest: DataStore.recentShadersRequest)
     private var recentShaders: FetchedResults<ToyShader>
     
     let cellView: (ToyShader?) -> Cell
@@ -86,7 +86,7 @@ struct StartupView: View {
         }
         
         guard let id = shader?.objectID else {
-            let newShader = PersistenceController.shared.newToyShader()
+            let newShader = DataStore.shared.newToyShader()
             openWindow(value: newShader.objectID.uriRepresentation())
             return
         }
@@ -98,6 +98,6 @@ struct StartupView: View {
 struct StartupView_Previews: PreviewProvider {
     static var previews: some View {
         StartupView()
-            .environment(\.managedObjectContext, PersistenceController.shared.context)
+            .environment(\.managedObjectContext, DataStore.shared.context)
     }
 }

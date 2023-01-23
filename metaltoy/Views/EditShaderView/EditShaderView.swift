@@ -56,23 +56,23 @@ struct EditShaderView: View {
         
         // Update source in database
         onSubmit()
-        PersistenceController.shared.updateToyShader(id: shader.objectID, source: editorContent)
+        DataStore.shared.updateToyShader(id: shader.objectID, source: editorContent)
     }
     
     private func onDuplicate() {
-        let newShader = PersistenceController.shared.newToyShader(source: shader.source!)
+        let newShader = DataStore.shared.newToyShader(source: shader.source!)
         openWindow(value: newShader.objectID.uriRepresentation())
     }
     
     private func onDelete() {
-        PersistenceController.shared.deleteToyShader(id: shader.objectID)
+        DataStore.shared.deleteToyShader(id: shader.objectID)
         // TODO: Close editor window
     }
 }
 
 struct EditShaderView_Previews: PreviewProvider {
     static var previews: some View {
-        let shader = PersistenceController.shared.newToyShader()
+        let shader = DataStore.shared.newToyShader()
         
         EditShaderView(shader: shader)
     }
