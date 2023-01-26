@@ -28,15 +28,11 @@ struct metaltoyApp: App {
     }
     
     var body: some Scene {
-        WindowGroup {
+        Window("MetalToy", id: "main") {
             StartupView()
                 .environment(\.managedObjectContext, DataStore.shared.context)
         }
         .windowResizabilityContentSize()
-        .commands {
-            // Stop multiple windows from being opened
-            CommandGroup(replacing: .newItem, addition: { })
-        }
 
         WindowGroup("Editor", for: URL.self) { $shaderID in
             EditShaderView(shader: DataStore.shared.getToyShader(url: shaderID!)!)
